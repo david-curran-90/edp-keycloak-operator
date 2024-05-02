@@ -21,6 +21,10 @@ spec:
       serviceAccountName: edp-{{ .Values.name }}
       securityContext:
         runAsNonRoot: true
+      {{- if .Values.image.pullSecrets }}
+      imagePullSecrets:
+        {{ toYaml .Values.image.pullSecrets | nindent 8 }}
+      {{- end }}
       containers:
         - name: {{ .Values.name }}
           # Replace this with the built image name
