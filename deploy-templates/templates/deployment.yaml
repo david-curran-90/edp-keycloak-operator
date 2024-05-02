@@ -21,7 +21,7 @@ spec:
       serviceAccountName: edp-{{ .Values.name }}
       securityContext:
         runAsNonRoot: true
-      {{- if .Values.image.pullSecrets }}
+      {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
         {{ toYaml .Values.imagePullSecrets | nindent 8 }}
       {{- end }}
