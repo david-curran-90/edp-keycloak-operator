@@ -14,6 +14,8 @@ image:
   # if not defined then .Chart.AppVersion is used
   # -- EDP keycloak-operator Docker image tag. The released image can be found on [Dockerhub](https://hub.docker.com/r/epamedp/keycloak-operator/tags)
   tag:
+  # -- List of image pull secrets for using private registries
+  pullSecrets: []
 # -- If defined, a imagePullPolicy applied to the deployment
 imagePullPolicy: "IfNotPresent"
 
